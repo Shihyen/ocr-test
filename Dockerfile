@@ -14,9 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# COPY ./qrcodeocr/ini/config.prod.ini ./qrcodeocr/ini/config.ini
+COPY ./qrcodeocr/ini/config.prod.ini ./qrcodeocr/ini/config.ini
 
-# COPY ./qrcodeocr/ini/logging.prod.ini ./qrcodeocr/ini/logging.ini
+COPY ./qrcodeocr/ini/logging.prod.ini ./qrcodeocr/ini/logging.ini
 
 ENV PYTHONPATH "${PYTHONPATH}:/app/qrcodeocr"
 

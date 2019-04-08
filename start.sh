@@ -6,4 +6,4 @@ docker stop $(docker ps -q --filter ancestor=ocr )
 
 docker build -t ocr -f Dockerfile .
 
-docker run -p $PORT:5000 -e TZ=Asia/Taipei -d ocr
+docker run -v /app/logs:/app/logs/ -p $PORT:5000 -e TZ=Asia/Taipei -d ocr
