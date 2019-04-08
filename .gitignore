@@ -1,0 +1,7 @@
+*.pyc
+venv
+env
+qrcodeocr
+qrcodeocr/ini/config.ini
+qrcodeocr/ini/logging.ini
+.idea/

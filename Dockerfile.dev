@@ -1,0 +1,33 @@
+FROM python:3
+
+WORKDIR "/app/smart-api.howinvest.com"
+
+
+# Install dependencies using godep first
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# Copy the local package files to the container's workspace.
+# ADD . /go/src/gitlab.com/Howfintech/hopp-worker-service
+
+COPY . .
+
+COPY ./qrcodeocr/ini/config.dev.ini ./qrcodeocr/ini/config.ini
+
+COPY ./qrcodeocr/ini/logging.dev.ini ./qrcodeocr/ini/logging.ini
+
+ENV PYTHONPATH "${PYTHONPATH}:/app/smart-api.howinvest.com"
+
+# CMD [ "python", "/app/smart-api.howinvest.com/qrcodeocr/app/api.py", "-s data-api -e dev" ]
+
+# CMD ["gunicorn" $APP -b 0.0.0.0:$PORT -w $WORKERS --daemon --reload --timeout 1200 --access-logfile /app/logs/api/$PROJECT_NAME.access.log --error-logfile /app/logs/api/$PROJECT_NAME.error.log"
+# Document that the service listens on port 8080.
+
+CMD ["gunicorn", "qrcodeocr.app.api:app","-b", "0.0.0.0:5000", "-w", "3"]
+
+EXPOSE 5000
+
+
+# docker run -it --rm --name smart-api -v "$PWD":/app/smart-api.howinvest.com -w /app/smart-api.howinvest.com python:3 python /app/smart-api.howinvest.com/qrcodeocr/app/api.py

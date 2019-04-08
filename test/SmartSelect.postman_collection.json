@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "f4144e8d-62ff-44b1-a420-9477e908d473",
+		"name": "SmartSelect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "011d9aaa-fa40-404f-88e5-33642a609e84",
+			"name": "SmartSelect Daily Cache",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1ee73e79-9229-480a-9176-7bb8ff91ea57",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"search\": [\n        {\n            \"name\": \"區域\",\n            \"children\": [\n                {\n                    \"name\": \"亞洲\",\n                    \"children\": [\n                        {\n                            \"name\": \"台灣\"\n                        },\n                        {\n                            \"name\": \"日本\"\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"美洲\",\n                    \"children\": []\n                }\n            ]\n        },\n        {\n            \"name\": \"產業\",\n            \"children\": [\n                {\n                    \"name\": \"基本物料\",\n                    \"children\": [\n                        {\n                            \"name\": \"化學\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"requests\": 10,\n    \"sortKey\": \"correlation\",\n    \"sortBy\": \"asc\",\n    \"filterGeneralIssuer\": [\n        \"鋒裕匯理系列基金\",\n        \"景順系列基金\"\n    ],\n    \"filterCurrencyType\": [\n        \"EUR\",\n        \"USD\"\n    ],\n    \"fundcandidates\": true,\n    \"risklevel\": 3\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select_cache?nocache=1",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select_cache"
+					],
+					"query": [
+						{
+							"key": "nocache",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d5e02bc1-0e5a-4ea2-b78f-9fff8bee1f9e",
+			"name": "SmartSelect Hourly nav Cache",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1ee73e79-9229-480a-9176-7bb8ff91ea57",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"search\": [\n        {\n            \"name\": \"區域\",\n            \"children\": [\n                {\n                    \"name\": \"亞洲\",\n                    \"children\": [\n                        {\n                            \"name\": \"台灣\"\n                        },\n                        {\n                            \"name\": \"日本\"\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"美洲\",\n                    \"children\": []\n                }\n            ]\n        },\n        {\n            \"name\": \"產業\",\n            \"children\": [\n                {\n                    \"name\": \"基本物料\",\n                    \"children\": [\n                        {\n                            \"name\": \"化學\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"requests\": 10,\n    \"sortKey\": \"correlation\",\n    \"sortBy\": \"asc\",\n    \"filterGeneralIssuer\": [\n        \"鋒裕匯理系列基金\",\n        \"景順系列基金\"\n    ],\n    \"filterCurrencyType\": [\n        \"EUR\",\n        \"USD\"\n    ],\n    \"fundcandidates\": true,\n    \"risklevel\": 3\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select_cache?nocache=1&cache_type=nav",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select_cache"
+					],
+					"query": [
+						{
+							"key": "nocache",
+							"value": "1"
+						},
+						{
+							"key": "cache_type",
+							"value": "nav"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "970b2918-c831-4f58-897b-f49d7f469b51",
+			"name": "SmartSelect Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "03b75c80-3f36-4d6d-ab08-2c7de2d871fd",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Access-Control-Allow-Origin",
+						"value": "*"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Referer",
+						"value": "https://how-fintech-smart-select.firebaseapp.com/"
+					},
+					{
+						"key": "Origin",
+						"value": "https://how-fintech-smart-select.firebaseapp.com"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"search\": [\n        {\n            \"name\": \"區域\",\n            \"children\": [\n                {\n                    \"name\": \"亞洲\",\n                    \"children\": [\n                        {\n                            \"name\": \"台灣\"\n                        },\n                        {\n                            \"name\": \"日本\"\n                        }\n                    ]\n                },\n                {\n                    \"name\": \"美洲\",\n                    \"children\": []\n                }\n            ]\n        },\n        {\n            \"name\": \"產業\",\n            \"children\": [\n                {\n                    \"name\": \"基本物料\",\n                    \"children\": [\n                        {\n                            \"name\": \"化學\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"requests\": 10,\n    \"sortKey\": \"correlation\",\n    \"sortBy\": \"asc\",\n    \"filterGeneralIssuer\": [\n        \"鋒裕匯理系列基金\",\n        \"景順系列基金\"\n    ],\n    \"filterCurrencyType\": [\n        \"EUR\",\n        \"USD\"\n    ],\n    \"fundcandidates\": true,\n    \"risklevel\": 3\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select_detail?nocache=1&howfundId=how100&vendor=fundrich",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select_detail"
+					],
+					"query": [
+						{
+							"key": "nocache",
+							"value": "1"
+						},
+						{
+							"key": "howfundId",
+							"value": "how100"
+						},
+						{
+							"key": "vendor",
+							"value": "fundrich"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "74958b83-3c1c-4e0f-ba57-e44f0c6ec7da",
+			"name": "SmartSelect",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc719376-a2c8-4efa-a9b7-5ad5cf7d1b12",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [\n            {\n                \"name\": \"區域\",\n                \"children\": [\n                    {\n                        \"name\": \"美洲\",\n                        \"children\": []\n                    }\n                ]\n            },\n            {\n                \"name\": \"產業\",\n                \"children\": [\n                    {\n                        \"name\": \"金融服務\",\n                        \"children\": []\n                    },\n                    {\n                        \"name\": \"房地產\",\n                        \"children\": []\n                    },\n                    {\n                        \"name\": \"科技\",\n                        \"children\": []\n                    }\n                ]\n            }\n        ],\n        \"count\": 10,\n        \"index\": 0,\n        \"filter\": {\n            \"currencyType\": [\"美元\"],\n            \"fundTypeName\": [],\n            \"generalIssuer\": []\n        },\n        \"sortBy\": \"desc\",\n        \"sortKey\": \"correlation\",\n        \"riskLevel\": 3,\n        \"recommendFund\": false\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e5c58881-b893-4a7c-84b6-414c5114f161",
+			"name": "SmartSelect Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc719376-a2c8-4efa-a9b7-5ad5cf7d1b12",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [\n            {\n                \"name\": \"區域\",\n                \"children\": [\n                    {\n                        \"name\": \"美洲\",\n                        \"children\": []\n                    }\n                ]\n            },\n            {\n                \"name\": \"產業\",\n                \"children\": [\n                    {\n                        \"name\": \"金融服務\",\n                        \"children\": []\n                    },\n                    {\n                        \"name\": \"房地產\",\n                        \"children\": []\n                    },\n                    {\n                        \"name\": \"科技\",\n                        \"children\": []\n                    }\n                ]\n            }\n        ],\n        \"count\": 10,\n        \"index\": 0,\n        \"filter\": {\n            \"currencyType\": [\"美元\"],\n            \"fundTypeName\": [],\n            \"generalIssuer\": []\n        },\n        \"sortBy\": \"desc\",\n        \"sortKey\": \"correlation\",\n        \"riskLevel\": 3,\n        \"recommendFund\": false\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select_category?nocache=1",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select_category"
+					],
+					"query": [
+						{
+							"key": "nocache",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "21235500-ce43-4646-8c51-f439690711a9",
+			"name": "SmartSelect Sharing  \b\bget token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc719376-a2c8-4efa-a9b7-5ad5cf7d1b12",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [{\n\t\t\"name\": \"區域\",\n\t\t\"children\": [{\n\t\t\t\"name\": \"美洲\",\n\t\t\t\"children\": []\n\t\t}]\n\t}, {\n\t\t\"name\": \"產業\",\n\t\t\"children\": [{\n\t\t\t\"name\": \"金融服務\",\n\t\t\t\"children\": []\n\t\t}, {\n\t\t\t\"name\": \"房地產\",\n\t\t\t\"children\": []\n\t\t}, {\n\t\t\t\"name\": \"科技\",\n\t\t\t\"children\": []\n\t\t}]\n\t}],\n\t\"count\": 10,\n\t\"sortKey\": \"correlation\",\n\t\"sortBy\": \"desc\",\n\t\"filter\": {\n\t\t\"generalIssuer\": [],\n\t\t\"currencyType\": [\"USD\"],\n\t\t\"fundTypeName\": []\n\t},\n\t\"recommendFund\": false,\n\t\"riskLevel\": 3,\n\t\"index\": 0\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select_sharing",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select_sharing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a4fc798d-94be-40b5-842d-262638198d57",
+			"name": "SmartSelect Sharing get params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95b4cafa-49f8-4b88-bd5e-852bcdb24544",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [{\n\t\t\"name\": \"區域\",\n\t\t\"children\": [{\n\t\t\t\"name\": \"美洲\",\n\t\t\t\"children\": []\n\t\t}]\n\t}, {\n\t\t\"name\": \"產業\",\n\t\t\"children\": [{\n\t\t\t\"name\": \"金融服務\",\n\t\t\t\"children\": []\n\t\t}, {\n\t\t\t\"name\": \"房地產\",\n\t\t\t\"children\": []\n\t\t}, {\n\t\t\t\"name\": \"科技\",\n\t\t\t\"children\": []\n\t\t}]\n\t}],\n\t\"count\": 10,\n\t\"sortKey\": \"correlation\",\n\t\"sortBy\": \"desc\",\n\t\"filter\": {\n\t\t\"generalIssuer\": [],\n\t\t\"currencyType\": [],\n\t\t\"fundTypeName\": []\n\t},\n\t\"recommendFund\": false,\n\t\"riskLevel\": 3,\n\t\"index\": 0,\n\t\"share\": \"8979834194003073316\"\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/smart_select_sharing?sharing_code=8bcd70aba72856a7e2b04157460644c0b421ecc1759700e5b95752a5d5fdc461&nocache=1",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"smart_select_sharing"
+					],
+					"query": [
+						{
+							"key": "sharing_code",
+							"value": "8bcd70aba72856a7e2b04157460644c0b421ecc1759700e5b95752a5d5fdc461"
+						},
+						{
+							"key": "nocache",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9b733fa4-d538-470e-b8d2-d844aa6f806f",
+			"name": "SmartSelect Issuer & Currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "180140a1-1160-4529-9d0f-357999560e6b",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\n        {\n            \"name\": \"區域\",\n            \"children\": [\n                {\n                    \"name\": \"美洲\",\n                    \"children\": []\n                }\n            ]\n        },\n        {\n            \"name\": \"產業\",\n            \"children\": [\n                {\n                    \"name\": \"基本物料\",\n                    \"children\": [\n                        { \n                            \"name\": \"鋼鐵\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"count\": 10,\n    \"index\": 0,\n    \"sortKey\": \"correlation\",\n    \"sortBy\": \"desc\",\n    \"filter\": {\n        \"generalIssuer\": [],\n        \"currencyType\": []\n    },\n    \"recommendFund\": true,\n    \"riskLevel\": 1\n}"
+				},
+				"url": {
+					"raw": "{{server_name}}/{{version}}/issuer_currency?nocache=1",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"{{version}}",
+						"issuer_currency"
+					],
+					"query": [
+						{
+							"key": "nocache",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
