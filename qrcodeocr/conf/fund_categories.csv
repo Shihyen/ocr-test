@@ -1,0 +1,9 @@
+enabled,category,benchmark_id,riskfree_idx_id,query_str
+1,STOCK_US,howIAM1,,'"{"marketType": "美國", "fundType": "股票型", "startDate": {"$lt": "20120101"}, "fundScaleThous":{"$gte":8000}, "currencyType":"USD"}"'
+0,STOCK_EU,howISI25,,"{'marketType': {'$in':['己開發歐洲','歐洲']}, 'fundType': '股票型', 'startDate': {'$lt': '20120101'}, 'fundScaleThous':{'$gte':8000}}"
+0,STOCK_JP,howIAI3,,
+0,STOCK_AS,howISI21,,
+0,BOND_GL,howIBI1,,
+0,BOND_US,,,
+0,BOND_EU,,,
+0,BOND_EM,,,

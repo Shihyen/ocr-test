@@ -1,0 +1,61 @@
+{
+  "howfundId": "howF294",
+  "thisYear": [
+    {
+      "ROI": 4.63872,
+      "divYield": 0.118,
+      "divProfit": 4.76218
+    }
+  ],
+  "accumulate": [
+    {
+      "ROI": 4.0332,
+      "divYield": 0.62367,
+      "divProfit": 4.68202
+    }
+  ],
+  "divData": [
+    {
+      "20170419": [
+        {
+          "date": "20170419",
+          "currency": "USD",
+          "divFrequency": "月配",
+          "div": "0.07",
+          "divYield": "",
+          "divProfit": ""
+        }
+      ],
+      "20170321": [
+        {
+          "date": "20170321",
+          "currency": "USD",
+          "divFrequency": "月配",
+          "div": "0.07",
+          "divYield": 0.03933,
+          "divProfit": 1.44143
+        }
+      ],
+      "20170216": [
+        {
+          "date": "20170216",
+          "currency": "USD",
+          "divFrequency": "月配",
+          "div": "0.07",
+          "divYield": 0.039881,
+          "divProfit": 2.06347
+        }
+      ],
+      "20170119": [
+        {
+          "date": "20170119",
+          "currency": "USD",
+          "divFrequency": "月配",
+          "div": "0.07",
+          "divYield": 0.04069,
+          "divProfit": 1.8945
+        }
+      ]
+    }
+  ]
+}
