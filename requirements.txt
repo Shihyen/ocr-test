@@ -5,7 +5,7 @@ chardet==3.0.4
 Click==7.0
 Flask==1.0.2
 Flask-Caching==1.7.0
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
 Flask-RESTful==0.3.7
 Flask-Static-Compress==1.0.2
 get==2019.3.22
